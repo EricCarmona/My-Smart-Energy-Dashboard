@@ -162,3 +162,23 @@ input:-webkit-autofill {
   box-shadow: 0 0 0 1000px #8F87F8 inset !important;
   -webkit-text-fill-color: #2D2A3E !important;
 }
+
+/* SECTIONS */
+
+.main__view {
+  padding: 2rem 3rem;
+  margin-left: 25rem;
+  color: #8F87F8;
+}
+
+.home__title, .energy-data__title, .hydrogen__title, .weather__title, .settings__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.home__text, .energy-data__text, .hydrogen__text, .weather__text, .settings__text {
+  font-size: 1.6rem;
+  text-align: left;
+}
