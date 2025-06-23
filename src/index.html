@@ -128,6 +128,63 @@
         <section class="main__view settings" hidden>
             <h2 class="settings__title">Settings</h2>
             <p class="settings__text">Adjust your preferences and configurations.</p>
+
+            <div class="settings__custom">
+                <div class="settings__top">
+                    <div class="settings__modes">
+                        <label class="settings__radio">
+                            <input type="radio" name="mode" class="settings__radio-input" checked>
+                            <span class="settings__radio-circle settings__radio-circle--dark"></span>
+                            <span class="settings__radio-label">Dark mode</span>
+                        </label>
+                        <label class="settings__radio">
+                            <input type="radio" name="mode" class="settings__radio-input">
+                            <span class="settings__radio-circle settings__radio-circle--light"></span>
+                            <span class="settings__radio-label">White mode</span>
+                        </label>
+                    </div>
+                    <div class="settings__fontsize">
+                        <span class="settings__fontsize-label">Tamaño de fuente</span>
+                        <input class="settings__fontsize-input" type="text" placeholder="Aa">
+                    </div>
+                    <button class="settings__confirm-btn">Confirmar</button>
+                </div>
+
+                <div class="settings__main">
+                    <div class="settings__lang">
+                        <span class="settings__lang-title">Idioma</span>
+                        <ul class="settings__lang-list">
+                            <li class="settings__lang-item">
+                                Español <span class="settings__lang-dot settings__lang-dot--active"></span>
+                            </li>
+                            <li class="settings__lang-item">
+                                Ingles <span class="settings__lang-dot"></span>
+                            </li>
+                            <li class="settings__lang-item">
+                                Nederlands <span class="settings__lang-dot"></span>
+                            </li>
+                        </ul>
+                        <button class="settings__lang-confirm">Confirmar</button>
+                    </div>
+                    <form class="settings__form">
+                        <label class="settings__form-label">
+                            Cambiar nombre:
+                            <input type="text" class="settings__form-input" placeholder="email">
+                        </label>
+                        <label class="settings__form-label">
+                            Cambiar contraseña:
+                            <input type="password" class="settings__form-input" placeholder="email">
+                        </label>
+                        <label class="settings__form-label">
+                            Confirmar contraseña:
+                            <input type="password" class="settings__form-input" placeholder="email">
+                        </label>
+                        <button class="settings__form-btn">Start free trial</button>
+                    </form>
+                </div>
+
+                <button class="settings__logout">Cerrar sesion</button>
+            </div>
         </section>
 
     </main>
