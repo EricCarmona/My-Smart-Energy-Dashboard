@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EnergyIQ</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 
 <body>
     <header class="header">
         <section class="header__top">
-            <img src="./assets/img/#" alt="Logo" class="header__logo">
+            <img src="./assets/img/logo.png" width="100" alt="Logo" class="header__logo">
             <div class="header__titles">
                 <h1 class="header__title">EnergyIQ</h1>
                 <h2 class="header__subtitle">BETA</h2>
@@ -19,35 +21,48 @@
         </section>
 
         <nav class="header__nav">
-            <a href="#" class="header__link" data-section="home">Home</a>
-            <a href="#" class="header__link" data-section="energy-data">Energy Data</a>
-            <a href="#" class="header__link" data-section="hydrogen">Hydrogen Use & Production</a>
-            <a href="#" class="header__link" data-section="weather">Weather & Environment</a>
-            <a href="#" class="header__link-bottom" data-section="settings">Settings</a>
-
+            <a href="#" class="header__link" data-section="home" title="Home">
+                <i class="fas fa-home fa-2x"></i>
+            </a>
+            <a href="#" class="header__link" data-section="energy-data" title="Energy Data">
+                <i class="fas fa-bolt fa-2x"></i>
+            </a>
+            <a href="#" class="header__link" data-section="hydrogen" title="Hydrogen Use & Production">
+                <i class="fas fa-flask fa-2x"></i>
+            </a>
+            <a href="#" class="header__link" data-section="weather" title="Weather & Environment">
+                <i class="fas fa-cloud-sun fa-2x"></i>
+            </a>
+            <a href="#" class="header__link-bottom" data-section="settings" title="Settings">
+                <i class="fas fa-cog fa-2x"></i>
+            </a>
         </nav>
+
     </header>
 
     <main class="main">
         <section class="main-top">
             <h2 class="main-top__title">Energy Dashboard</h2>
 
-            <div class="main-top__filters">
-                <button class="main-top__button">Today</button>
-                <button class="main-top__button">Month</button>
-                <button class="main-top__button">Year</button>
-            </div>
+            <div class="main-top__controls">
+                <div class="main-top__filters">
+                    <button class="main-top__button">Today</button>
+                    <button class="main-top__button">Month</button>
+                    <button class="main-top__button">Year</button>
+                </div>
 
-            <div class="main-top__date-picker">
-                <input class="main-top__input" list="date-options" placeholder="Select a date" />
-                <datalist id="date-options">
-                    <option value="2025-06-01">
-                    <option value="2025-06-02">
-                    <option value="2025-06-03">
-                    <option value="2025-06-04">
-                </datalist>
+                <div class="main-top__date-picker">
+                    <input class="main-top__input" list="date-options" placeholder="Select a date" />
+                    <datalist id="date-options">
+                        <option value="2025-06-01">
+                        <option value="2025-06-02">
+                        <option value="2025-06-03">
+                        <option value="2025-06-04">
+                    </datalist>
+                </div>
             </div>
         </section>
+
 
         <section class="main__view home">
             <h2 class="home__title">Welcome to EnergyIQ</h2>
