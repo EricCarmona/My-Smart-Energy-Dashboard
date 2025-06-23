@@ -245,3 +245,29 @@ input:-webkit-autofill {
   border: 2px solid #8F87F8;
   border-radius: 10px;
 }
+
+/* WEATHER */
+
+.weather__top {
+  display: flex;
+  gap: 5rem;
+  margin-top: 5rem;
+}
+
+.weather__square,
+.weather__middle-box,
+.weather__bottom-box {
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
+}
+
+.weather__square {
+  flex: 1;
+  height: 50rem;
+}
+
+.weather__middle-box, .weather__bottom-box {
+  margin-top: 5rem;
+  height: 50rem;
+}
