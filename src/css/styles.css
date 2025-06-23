@@ -220,3 +220,28 @@ input:-webkit-autofill {
   height: 50rem;
   margin-top: 3rem;
 }
+
+/* HYDROGEN */
+
+.hydrogen__top-box,
+.hydrogen__bottom-box {
+  height: 50rem;
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
+  margin: 5rem 0 5rem 0;
+}
+
+.hydrogen__middle {
+  display: flex;
+  gap: 5rem;
+  margin-top: 2rem;
+}
+
+.hydrogen__square {
+  flex: 1;
+  height: 50rem;
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
+}
