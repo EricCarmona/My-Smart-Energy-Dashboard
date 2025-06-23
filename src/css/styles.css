@@ -188,12 +188,12 @@ input:-webkit-autofill {
   text-align: left;
 }
 
-/* MAIN-BOX */
+/* HOME */
 
 .home__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 5rem;
   margin-top: 2rem;
 }
 
@@ -204,3 +204,19 @@ input:-webkit-autofill {
   height: 50rem;
 }
 
+/* ENERGY-DATA */
+
+.energy-data__column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.energy-data__box {
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
+  height: 50rem;
+  margin-top: 3rem;
+}
