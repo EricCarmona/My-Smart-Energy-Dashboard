@@ -87,13 +87,16 @@ body {
 /* MAIN-TOP */
 
 .main-top {
+  width: 165rem;
   padding: 2rem 3rem;
+  position: fixed;
+  background-color: #1F1D2B;
   color: #8F87F8;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
-  margin-left: 28rem; 
+  margin-left: 25rem; 
 }
 
 .main-top__title {
@@ -107,6 +110,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 1rem;
 }
 
 .main-top__filters {
@@ -136,11 +140,11 @@ body {
 }
 
 .main-top__date-picker {
-    margin-right: 3rem;
   background-color: #8F87F8;
   padding: 0.6rem 1.4rem;
   border-radius: 0.8rem;
   max-width: 20rem;
+  padding-left: 3rem;
 }
 
 .main-top__input {
@@ -172,6 +176,7 @@ input:-webkit-autofill {
 }
 
 .home__title, .energy-data__title, .hydrogen__title, .weather__title, .settings__title {
+  margin-top: 15rem;
   font-size: 2.4rem;
   font-weight: 700;
   text-align: left;
@@ -179,6 +184,23 @@ input:-webkit-autofill {
 }
 
 .home__text, .energy-data__text, .hydrogen__text, .weather__text, .settings__text {
-  font-size: 1.6rem;
+  font-size: 2rem;
   text-align: left;
 }
+
+/* MAIN-BOX */
+
+.home__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.home__box {
+  background-color: #2D2A3E; 
+  border: 2px solid #8F87F8; 
+  border-radius: 10px; 
+  height: 50rem;
+}
+
