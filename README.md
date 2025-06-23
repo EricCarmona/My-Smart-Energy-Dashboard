@@ -37,7 +37,14 @@ The Smart Energy Dashboard is a web application to monitor and manage energy use
 - `/docs/` → functional design  
 - `/src/` → source code  
 
-## GitHub Repository Link
+---
+
+## License
+
+This project is under the [MIT](./LICENSE) license.  
+If you use or change this code, please **give credit to Eric Carmona Castaño** as the original author.  
+Respecting the license helps keep the project open and friendly for everyone.
+
 
 
 ---------------------------------------------------
@@ -82,5 +89,12 @@ El Smart Energy Dashboard es una aplicación web para monitorizar y gestionar el
 - `/docs/` → diseño funcional  
 - `/src/` → código fuente  
 
-## Enlace al Repositorio GitHub
+---
+
+## Licencia
+
+Este proyecto está bajo la licencia [MIT](./LICENSE).  
+Por favor, si usas o adaptas este código, **da crédito a Eric Carmona Castaño** como autor original.  
+Respetar la licencia ayuda a mantener el espíritu abierto y colaborativo del proyecto.
+
 
