@@ -5,69 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EnergyIQ</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
-<style>
-    body {
-        background-color: #0f0f0f;
-        font-family: 'Segoe UI', sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-
-    .container {
-        background: #1c1c1c;
-        padding: 40px;
-        border-radius: 12px;
-        text-align: center;
-        box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-    }
-
-    .titel {
-        color: #74c0fc;
-        font-size: 2.8em;
-        margin-bottom: 30px;
-        font-weight: bold;
-    }
-
-    .login-formulier input {
-        width: 260px;
-        margin: 12px auto;
-        padding: 12px;
-        border-radius: 6px;
-        border: none;
-        background-color: #d0e7ff;
-        font-size: 1em;
-        display: block;
-    }
-
-    .login-formulier button {
-        margin-top: 20px;
-        padding: 12px 20px;
-        background: #000;
-        color: #fff;
-        border: none;
-        border-radius: 6px;
-        font-weight: bold;
-        cursor: pointer;
-        font-size: 1em;
-        transition: background 0.3s ease;
-    }
-
-    .login-formulier button:hover {
-        background: #333;
-    }
-</style>
-
-<body>
+<body id="login">
     <div class="container">
         <h1 class="titel">EnergyIQ</h1>
         <form action="php/inloggen.php" method="POST" class="login-formulier">
             <input type="text" name="username" placeholder="Gebruikersnaam" required>
             <input type="password" name="wachtwoord" placeholder="Wachtwoord" required>
-            <button type="submit">Start gratis proefperiode</button>
+            <button type="submit">LOGIN</button>
         </form>
     </div>
 

@@ -1,88 +1,147 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Orbitron", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
 }
+
 html {
-    font-size: 62.5%; /* 62.5% de 16px = 10px */
+  font-size: 62.5%;
+  /* 62.5% de 16px = 10px */
 }
+
 body {
-  background-color: #1F1D2B;              
-  line-height: 1.6;           
+  background-color: #1F1D2B;
+  line-height: 1.6;
+}
+
+/* LOGIN */
+
+#login {
+  background-color: #1F1D2B;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #2D2A3E;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.titel {
+  color: #8F87F8;
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.login-formulier input {
+  width: 260px;
+  margin: 12px auto;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #2D2A3E;
+  background-color: #8F87F8;
+  font-size: 1em;
+  display: block;
+}
+
+.login-formulier button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #1F1D2B;
+  color: #6d6b79;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+
+.login-formulier button:hover {
+  background: #333;
 }
 
 /* HEADER */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 25rem;
-    background-color: #2D2A3E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-    color: #8F87F8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 25rem;
+  background-color: #2D2A3E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  color: #8F87F8;
 }
 
 .header__top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
 }
 
 .header__logo {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .header__titles {
-    text-align: center;
+  text-align: center;
 }
 
 .header__title {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .header__subtitle {
-    font-size: 1.4rem;
-    opacity: 0.7;
+  font-size: 1.4rem;
+  opacity: 0.7;
 }
 
 .header__title,
 .header__subtitle {
   cursor: default;
-  user-select: none; 
+  user-select: none;
 }
 
 .header__nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
-    flex: 1;
-    justify-content: center;
-    margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  flex: 1;
+  justify-content: center;
+  margin-top: 60px;
 }
 
 .header__link {
-    color: #8F87F8;
-    text-decoration: none;
-    font-size: 1.6rem;
-    text-align: center;
+  color: #8F87F8;
+  text-decoration: none;
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 .header__link-bottom {
-    color: #8F87F8;
-    text-decoration: none;
-    font-size: 1.6rem;
-    margin-top: auto;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
+  color: #8F87F8;
+  text-decoration: none;
+  font-size: 1.6rem;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 /* MAIN-TOP */
@@ -97,7 +156,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
-  margin-left: 25rem; 
+  margin-left: 25rem;
 }
 
 .main-top__title {
@@ -176,7 +235,10 @@ input:-webkit-autofill {
   color: #8F87F8;
 }
 
-.home__title, .energy-data__title, .hydrogen__title, .weather__title {
+.home__title,
+.energy-data__title,
+.hydrogen__title,
+.weather__title {
   margin-top: 15rem;
   font-size: 2.4rem;
   font-weight: 700;
@@ -184,7 +246,11 @@ input:-webkit-autofill {
   margin-bottom: 1rem;
 }
 
-.home__text, .energy-data__text, .hydrogen__text, .weather__text, .settings__text {
+.home__text,
+.energy-data__text,
+.hydrogen__text,
+.weather__text,
+.settings__text {
   font-size: 2rem;
   text-align: left;
 }
@@ -199,13 +265,13 @@ input:-webkit-autofill {
 }
 
 .home__box {
-  background-color: #2D2A3E; 
-  border: 2px solid #8F87F8; 
-  border-radius: 10px; 
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
   height: 50rem;
   display: flex;
   justify-content: center;
-  align-items: center;     
+  align-items: center;
 }
 
 /* ENERGY-DATA */
@@ -271,7 +337,8 @@ input:-webkit-autofill {
   height: 50rem;
 }
 
-.weather__middle-box, .weather__bottom-box {
+.weather__middle-box,
+.weather__bottom-box {
   margin-top: 5rem;
   height: 50rem;
 }
@@ -368,11 +435,11 @@ input:-webkit-autofill {
   border-color: #fff;
 }
 
-.settings__radio-input:checked + .settings__radio-circle--dark {
+.settings__radio-input:checked+.settings__radio-circle--dark {
   box-shadow: 0 0 0 3px #8F87F8;
 }
 
-.settings__radio-input:checked + .settings__radio-circle--light {
+.settings__radio-input:checked+.settings__radio-circle--light {
   box-shadow: 0 0 0 3px #8F87F8;
 }
 
