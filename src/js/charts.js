@@ -20,9 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    position: 'top',
+                    position: true,
                 },
             }
         }
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true
@@ -70,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true
@@ -102,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 r: {
                     beginAtZero: true
@@ -129,7 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }]
         },
         options: {
-            responsive: true
+            responsive: true,
+            maintainAspectRatio: false,
         }
     });
 
@@ -152,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     position: 'right',
@@ -178,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 x: {
                     beginAtZero: true
@@ -207,6 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 x: {
                     type: 'linear',
@@ -237,6 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 x: {
                     stacked: true

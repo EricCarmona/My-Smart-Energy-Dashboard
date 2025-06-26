@@ -1,94 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Orbitron", sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
 }
-html {
-    font-size: 62.5%; /* 62.5% de 16px = 10px */
-}
-body {
-  background-color: #1F1D2B;              
-  line-height: 1.6;           
+body, html {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
 }
 
 /* HEADER */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 25rem;
-    background-color: #2D2A3E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-    color: #8F87F8;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 25rem;
+  background-color: #2D2A3E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  color: #8F87F8;
 }
 
 .header__top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
 }
 
 .header__logo {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .header__titles {
-    text-align: center;
+  text-align: center;
 }
 
 .header__title {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  user-select: none;
 }
 
 .header__subtitle {
-    font-size: 1.4rem;
-    opacity: 0.7;
-}
-
-.header__title,
-.header__subtitle {
-  cursor: default;
-  user-select: none; 
+  font-size: 1.4rem;
+  opacity: 0.7;
+  user-select: none;
 }
 
 .header__nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10rem;
-    flex: 1;
-    justify-content: center;
-    margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  flex: 1;
+  justify-content: center;
+  margin-top: 60px;
 }
 
-.header__link {
-    color: #8F87F8;
-    text-decoration: none;
-    font-size: 1.6rem;
-    text-align: center;
+.header__link,
+.header__link-bottom {
+  color: #8F87F8;
+  text-decoration: none;
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 .header__link-bottom {
-    color: #8F87F8;
-    text-decoration: none;
-    font-size: 1.6rem;
-    margin-top: auto;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
+  margin-top: auto;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 /* MAIN-TOP */
-
 .main-top {
-  width: 165rem;
+  width: calc(100% - 25rem);
   padding: 2rem 3rem;
   position: fixed;
   background-color: #1F1D2B;
@@ -97,7 +88,8 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
-  margin-left: 25rem; 
+  margin-left: 25rem;
+  z-index: 10;
 }
 
 .main-top__title {
@@ -168,11 +160,12 @@ input:-webkit-autofill {
   -webkit-text-fill-color: #2D2A3E !important;
 }
 
-/* SECTIONS */
+/* MAIN VIEW */
 
 .main__view {
   padding: 2rem 3rem;
   margin-left: 25rem;
+  margin-top: 15rem;
   color: #8F87F8;
 }
 
@@ -191,11 +184,21 @@ input:-webkit-autofill {
 
 /* HOME */
 
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* o 400px según necesites */
+}
+
+
 .home__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 1200px; /* máximo ancho, puedes ajustar */
+  margin: 0 auto; /* centra horizontalmente */
+  box-sizing: border-box;
 }
 
 .home__box {
@@ -207,6 +210,14 @@ input:-webkit-autofill {
   justify-content: center;
   align-items: center;     
 }
+
+.home__box canvas {
+  width: 100% !important;  /* llena el ancho del contenedor */
+  height: auto !important; /* mantiene proporción */
+  max-height: 300px;        /* opcional, limita alto máximo */
+  display: block;
+}
+
 
 /* ENERGY-DATA */
 
@@ -541,7 +552,7 @@ input:-webkit-autofill {
 .settings__form-btn:hover {
   background: #b3b0f9;
 }
-
+ 
 .settings__logout {
   margin-top: 3.5rem;
   width: 32rem;
