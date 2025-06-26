@@ -469,29 +469,17 @@ input:-webkit-autofill {
 }
 
 .settings__fontsize-input {
-  width: 5rem;
+  width: 10rem;
   height: 3.5rem;
   border-radius: 0.4rem;
   border: none;
   background: #fff;
   color: #23213e;
-  font-size: 2.6rem;
+  font-size: 2rem;
   text-align: center;
   font-family: "Orbitron", sans-serif;
 }
 
-.settings__confirm-btn {
-  background: transparent;
-  border: 1px solid #8F87F8;
-  color: #8F87F8;
-  padding: 0.8rem 2.6rem;
-  border-radius: 0.4rem;
-  font-size: 1.6rem;
-  margin-top: 2rem;
-  cursor: pointer;
-  transition: background .2s;
-  align-self: flex-end;
-}
 
 .settings__confirm-btn:hover {
   background: #23213e;
@@ -634,4 +622,113 @@ input:-webkit-autofill {
 
 .settings__logout:hover {
   background: #342e4c;
+}
+
+/* ---------------------------------------------
+   LIGHT MODE STYLES / ESTILOS PARA MODO CLARO
+   These styles override dark mode when .light-mode is on body
+   Estos estilos sobrescriben el modo oscuro cuando .light-mode está en body
+----------------------------------------------*/
+
+body.light-mode {
+  background-color: #f4f4f9;
+  color: #23213e;
+}
+
+body.light-mode .header,
+body.light-mode .main-top,
+body.light-mode .main__view,
+body.light-mode .container {
+  background-color: #fff;
+  color: #23213e;
+}
+
+body.light-mode .header__link,
+body.light-mode .header__link-bottom,
+body.light-mode .main-top__title,
+body.light-mode .main-top__filters,
+body.light-mode .main-top__button,
+body.light-mode .main-top__date-picker,
+body.light-mode .main__view,
+body.light-mode .home__title,
+body.light-mode .energy-data__title,
+body.light-mode .hydrogen__title,
+body.light-mode .weather__title,
+body.light-mode .settings__title,
+body.light-mode .settings__text {
+  color: #23213e;
+}
+
+body.light-mode .home__box,
+body.light-mode .energy-data__box,
+body.light-mode .hydrogen__top-box,
+body.light-mode .hydrogen__square,
+body.light-mode .weather__square,
+body.light-mode .weather__middle-box,
+body.light-mode .weather__bottom-box,
+body.light-mode .settings__box,
+body.light-mode .settings__custom,
+body.light-mode .settings__top,
+body.light-mode .settings__lang,
+body.light-mode .settings__form {
+  background-color: #f4f4f9;
+  border-color: #928cff;
+  color: #23213e;
+}
+
+body.light-mode .main-top__filters,
+body.light-mode .main-top__date-picker {
+  background-color: #e0e0ff;
+}
+
+body.light-mode .main-top__button {
+  background-color: #fff;
+  color: #23213e;
+}
+body.light-mode .main-top__button:hover,
+body.light-mode .main-top__button:focus {
+  background-color: #e0e0ff;
+}
+
+body.light-mode .settings__radio-label {
+  color: #23213e;
+}
+
+body.light-mode .settings__confirm-btn,
+body.light-mode .settings__lang-confirm {
+  border-color: #928cff;
+  color: #23213e;
+}
+body.light-mode .settings__confirm-btn:hover,
+body.light-mode .settings__lang-confirm:hover {
+  background: #e0e0ff;
+}
+
+body.light-mode .settings__form-input {
+  background: #fff;
+  color: #23213e;
+  border-color: #928cff;
+}
+
+body.light-mode .settings__form-btn {
+  background: #928cff;
+  color: #fff;
+}
+
+body.light-mode .settings__logout {
+  background: #fff;
+  color: #ff6e6e;
+}
+body.light-mode .settings__logout:hover {
+  background: #e0e0ff;
+}
+body .settings__fontsize-label{
+  color: #928cff;
+}
+body.light-mode .main-top__input {
+  background-color: #e0e0ff;
+  color: #23213e;
+}
+body.light-mode .main-top__input::placeholder {
+  color: #888;
 }

@@ -85,5 +85,30 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+    // Theme mode switcher / Cambiador de modo de tema
+    const modeRadios = document.querySelectorAll('input[name="mode"]');
+    modeRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.nextElementSibling.classList.contains('settings__radio-circle--light')) {
+                document.body.classList.add('light-mode');
+            } else if (radio.nextElementSibling.classList.contains('settings__radio-circle--dark')) {
+                document.body.classList.remove('light-mode');
+            }
+        });
+    });
+
+    // Font size changer / Cambiador de tamaño de fuente
+    const fontSizeInput = document.querySelector('.settings__fontsize-input');
+    fontSizeInput.addEventListener('input', () => {
+        let size = fontSizeInput.value.toLowerCase();
+        let html = document.documentElement;
+        if (size === 'small') {
+            html.style.fontSize = '55%'; // ~8.8px
+        } else if (size === 'medium') {
+            html.style.fontSize = '62.5%'; // 10px (default)
+        } else if (size === 'large') {
+            html.style.fontSize = '75%'; // 12px
+        }
+    });
 
 });

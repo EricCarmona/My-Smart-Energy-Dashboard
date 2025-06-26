@@ -204,11 +204,14 @@
                     <!-- Font size input / Entrada de tamaño de fuente -->
                     <div class="settings__fontsize">
                         <span class="settings__fontsize-label">Font size</span>
-                        <input class="settings__fontsize-input" type="text" placeholder="Aa">
+                        <input class="settings__fontsize-input" type="text" list="font-size-list" placeholder="Aa">
+                        <datalist id="font-size-list">
+                            <option value="Small"></option>
+                            <option value="Medium"></option>
+                            <option value="Large"></option>
+                        </datalist>
                     </div>
-                    <button class="settings__confirm-btn">Confirm</button>
                 </div>
-
                 <div class="settings__main">
                     <!-- Language selection / Selección de idioma -->
                     <div class="settings__lang">
