@@ -1,5 +1,11 @@
+// charts.js - EnergyIQ Dashboard Charts
+// EN: This file handles all the chart logic for the dashboard using Chart.js
+// ES: Este archivo gestiona toda la lógica de gráficos para el dashboard usando Chart.js
+
 let allData = [];
 
+// EN: Get the 2D drawing context for each canvas (one per chart)
+// ES: Obtiene el contexto 2D de cada canvas (uno por gráfico)
 const ctx1 = document.getElementById('myLineChart1').getContext('2d');
 const ctx2 = document.getElementById('myLineChart2').getContext('2d');
 const ctx3 = document.getElementById('myLineChart3').getContext('2d');
@@ -22,12 +28,18 @@ const ctx19 = document.getElementById('myLineChart19').getContext('2d');
 const ctx20 = document.getElementById('myLineChart20').getContext('2d');
 const ctx21 = document.getElementById('myLineChart21').getContext('2d');
 
-// Gráficos iniciales con datos vacíos
+// EN: Labels for the different types of data (used in charts)
+// ES: Etiquetas para los diferentes tipos de datos (usadas en los gráficos)
 const dataLabels1 = ['Zonnepaneelspanning', 'Zonnepaneelstroom', 'Stroomverbruik woning'];
 const dataLabels2 = ['Waterstofproductie', 'Waterstofverbruik auto', 'Waterstofopslag woning'];
 const dataLabels3 = ['Buitentemperatuur', 'Binnentemperatuur', 'Luchtdruk'];
 
+// EN: Default data for initializing the charts (will be replaced with real data)
+// ES: Datos por defecto para inicializar los gráficos (serán reemplazados por datos reales)
 const defaultData = [12, 19, 3];
+
+// EN: Create all the charts (pie, line, bar, etc.) with Chart.js
+// ES: Crea todos los gráficos (pie, línea, barra, etc.) con Chart.js
 
 const chart1 = new Chart(ctx1, {
     type: 'pie',
@@ -331,13 +343,15 @@ const chart21 = new Chart(ctx21, {
     options: { responsive: true, maintainAspectRatio: false }
 });
 
-// Fetch datos y llenar datalists
+// EN: Fetch data from the server (PHP) and fill the datalists for date and time
+// ES: Obtiene los datos del servidor (PHP) y llena los datalists de fecha y hora
 fetch('php/getData.php')
     .then(response => response.json())
     .then(data => {
         allData = data;
 
-        // Llenar datalists de fecha y hora
+        // EN: Fill the date and time datalists for the user to select
+        // ES: Llena los datalists de fecha y hora para que el usuario seleccione
         const dateOptions = [...new Set(data.map(item => item.date))];
         const timeOptions = [...new Set(data.map(item => item.time))];
 
@@ -360,16 +374,21 @@ fetch('php/getData.php')
         updateCharts();
     })
     .catch(error => {
-        console.error('Error al obtener los datos:', error);
+        // EN: Show error if data could not be loaded
+        // ES: Muestra error si no se pudieron cargar los datos
+        console.error('Error loading data:', error);
     });
 
-// Inputs
+// EN: Get the date and time input elements
+// ES: Obtiene los elementos de input de fecha y hora
 const dateInput = document.querySelector('input[list="date-options"]');
 const timeInput = document.querySelector('input[list="time-options"]');
 
 dateInput.addEventListener('input', updateCharts);
 timeInput.addEventListener('input', updateCharts);
 
+// EN: Main function to update all charts when the user selects a date or time
+// ES: Función principal para actualizar todos los gráficos cuando el usuario selecciona una fecha u hora
 function updateCharts() {
     const selectedDate = dateInput.value.trim();
     const selectedTime = timeInput.value.trim();
@@ -756,7 +775,8 @@ function updateCharts() {
     }
 }
 
-// Reset charts
+// EN: Reset all charts to zero values
+// ES: Reinicia todos los gráficos a valores cero
 function resetCharts() {
     const zero = [0, 0, 0];
     const zeroSingle = [0];

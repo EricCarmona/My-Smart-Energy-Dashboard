@@ -1,14 +1,22 @@
 <?php
-// Verbind met de database 'energy'
+// -----------------------------
+// USER CREATION SCRIPT / SCRIPT PARA CREAR USUARIO
+//
+// This script adds a new user to the 'energy' database with a hashed password.
+// Este script agrega un nuevo usuario a la base de datos 'energy' con una contraseña cifrada.
+// -----------------------------
+
+// Connect to the 'energy' database / Conectar a la base de datos 'energy'
 $pdo = new PDO("mysql:host=localhost;dbname=energy", "root", "");
 
-// Voorbeeldgegevens voor een nieuwe gebruiker
+// Example data for a new user / Datos de ejemplo para un nuevo usuario
 $username = "Eric";
-$wachtwoord = password_hash("Eric123", PASSWORD_DEFAULT); // Versleutelen
+$wachtwoord = password_hash("Eric123", PASSWORD_DEFAULT); // Hash password / Cifrar contraseña
 
-// Gebruik de juiste tabel- en kolomnamen
+// Use correct table and column names / Usar los nombres correctos de tabla y columna
 $stmt = $pdo->prepare("INSERT INTO gebruiker (username, wachtwoord) VALUES (?, ?)");
 $stmt->execute([$username, $wachtwoord]);
 
-echo "✅ Gebruiker succesvol toegevoegd aan de database 'energy'.";
+// Success message / Mensaje de éxito
+echo "✅ Gebruiker succesvol toegevoegd aan de database 'energy'."; // User successfully added / Usuario agregado correctamente
 ?>

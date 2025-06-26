@@ -227,6 +227,12 @@ input:-webkit-autofill {
   -webkit-text-fill-color: #2D2A3E !important;
 }
 
+/* --------------------------------------------------
+   MAIN DASHBOARD STYLES / ESTILOS PRINCIPALES DEL PANEL
+   This file contains all the CSS for layout, colors, and components.
+   Este archivo contiene todo el CSS para el diseño, colores y componentes.
+---------------------------------------------------*/
+
 /* SECTIONS */
 
 .main__view {
@@ -255,7 +261,7 @@ input:-webkit-autofill {
   text-align: left;
 }
 
-/* HOME */
+/* HOME SECTION / SECCIÓN HOME */
 
 .home__grid {
   display: grid;
@@ -264,6 +270,7 @@ input:-webkit-autofill {
   margin-top: 2rem;
 }
 
+/* Box styles for charts and data blocks / Estilos de cajas para gráficos y bloques de datos */
 .home__box, .energy-data__box, .hydrogen__top-box, .hydrogen__square, .weather__square, .weather__middle-box {
   background-color: #2D2A3E;
   border: 2px solid #8F87F8;
@@ -274,7 +281,7 @@ input:-webkit-autofill {
   align-items: center;
 }
 
-/* ENERGY-DATA */
+/* ENERGY-DATA SECTION / SECCIÓN DE DATOS DE ENERGÍA */
 
 .energy-data__column {
   display: flex;

@@ -1,25 +1,36 @@
-// Show the selected section and hide the others when a nav link is clicked.
+// ---------------------------------------------
+// MAIN DASHBOARD LOGIC / LÓGICA PRINCIPAL DEL PANEL
+//
+// This script handles navigation between dashboard sections and populates date/time selectors
+// Este script gestiona la navegación entre secciones del panel y llena los selectores de fecha/hora
+// ---------------------------------------------
 
+// Show the selected section and hide the others when a nav link is clicked.
+// Muestra la sección seleccionada y oculta las demás al hacer clic en un enlace de navegación.
 document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll('.header__link, .header__link-bottom');
     const sections = document.querySelectorAll('.main__view');
     const mainTop = document.querySelector('.main-top');
 
+    // Navigation logic / Lógica de navegación
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
 
             const sectionName = link.dataset.section;
 
+            // Hide all sections / Oculta todas las secciones
             sections.forEach(section => {
                 section.hidden = true;
             });
 
+            // Show the selected section / Muestra la sección seleccionada
             const targetSection = document.querySelector(`.${sectionName}`);
             if (targetSection) {
                 targetSection.hidden = false;
             }
 
+            // Hide top controls in settings / Oculta controles superiores en configuración
             if (sectionName === 'settings') {
                 if (mainTop) mainTop.style.display = "none";
             } else {
@@ -28,19 +39,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Fetch unique dates for the date selector / Obtiene fechas únicas para el selector de fechas
     fetch('php/getData.php')
         .then(response => response.json())
         .then(data => {
-            // Obtener fechas únicas
+            // Get unique dates / Obtener fechas únicas
             const fechas = [...new Set(data.map(item => item.date))];
 
-            // Seleccionar el datalist
+            // Select the datalist / Seleccionar el datalist
             const datalist = document.getElementById('date-options');
 
-            // Limpiar datalist (por si se llama varias veces)
+            // Clear datalist (in case called multiple times) / Limpiar datalist (por si se llama varias veces)
             datalist.innerHTML = '';
 
-            // Agregar las fechas como opciones
+            // Add dates as options / Agregar fechas como opciones
             fechas.forEach(fecha => {
                 const option = document.createElement('option');
                 option.value = fecha;
@@ -48,10 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+    // Fetch unique dates and times for selectors / Obtiene fechas y horas únicas para los selectores
     fetch('php/getData.php')
         .then(response => response.json())
         .then(data => {
-            // Obtener fechas únicas
+            // Get unique dates / Obtener fechas únicas
             const fechas = [...new Set(data.map(item => item.date))];
             const datalistFechas = document.getElementById('date-options');
             datalistFechas.innerHTML = '';
@@ -61,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 datalistFechas.appendChild(option);
             });
 
-            // Obtener horas únicas
+            // Get unique times / Obtener horas únicas
             const horas = [...new Set(data.map(item => item.time))];
             const datalistHoras = document.getElementById('time-options');
             datalistHoras.innerHTML = '';
