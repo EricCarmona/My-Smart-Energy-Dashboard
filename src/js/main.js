@@ -28,10 +28,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-fetch('http://localhost/lessen/repositorioProyecto2/My-Smart-Energy-Dashboard/src/php/readCSV.php')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => console.error('Error:', error));

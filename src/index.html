@@ -7,7 +7,6 @@
     <title>EnergyIQ</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
 <body>
@@ -54,10 +53,6 @@
                 <div class="main-top__date-picker">
                     <input class="main-top__input" list="date-options" placeholder="Select a date" />
                     <datalist id="date-options">
-                        <option value="2025-06-01">
-                        <option value="2025-06-02">
-                        <option value="2025-06-03">
-                        <option value="2025-06-04">
                     </datalist>
                 </div>
             </div>
@@ -69,15 +64,41 @@
             <p class="home__text">This is your home dashboard.</p>
 
             <div class="home__grid">
-                <div class="home__box"></div>
-                <div class="home__box"></div>
-                <div class="home__box"></div>
-                <div class="home__box"></div>
-                <div class="home__box"></div>
-                <div class="home__box"></div>
-                <div class="home__box"></div>
-                <div class="home__box"></div>
-                <div class="home__box"></div>
+                <div class="home__box">
+                    <canvas id="myLineChart1" width="400" height="200"></canvas>
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart2" width="400" height="200"></canvas>
+
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart3" width="400" height="200"></canvas>
+
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart4" width="400" height="200"></canvas>
+
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart5" width="400" height="200"></canvas>
+
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart6" width="400" height="200"></canvas>
+
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart7" width="400" height="200"></canvas>
+
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart8" width="400" height="200"></canvas>
+
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart9" width="400" height="200"></canvas>
+
+                </div>
             </div>
 
         </section>
@@ -188,7 +209,9 @@
         </section>
 
     </main>
-    <script src="./js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="./js/main.js"></script>
+<script src="js/charts.js" defer></script>
 </body>
 
 </html>

@@ -203,6 +203,9 @@ input:-webkit-autofill {
   border: 2px solid #8F87F8; 
   border-radius: 10px; 
   height: 50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;     
 }
 
 /* ENERGY-DATA */
@@ -558,4 +561,3 @@ input:-webkit-autofill {
 .settings__logout:hover {
   background: #342e4c;
 }
-
