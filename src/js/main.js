@@ -27,4 +27,50 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    fetch('php/getData.php')
+        .then(response => response.json())
+        .then(data => {
+            // Obtener fechas únicas
+            const fechas = [...new Set(data.map(item => item.date))];
+
+            // Seleccionar el datalist
+            const datalist = document.getElementById('date-options');
+
+            // Limpiar datalist (por si se llama varias veces)
+            datalist.innerHTML = '';
+
+            // Agregar las fechas como opciones
+            fechas.forEach(fecha => {
+                const option = document.createElement('option');
+                option.value = fecha;
+                datalist.appendChild(option);
+            });
+        });
+
+    fetch('php/getData.php')
+        .then(response => response.json())
+        .then(data => {
+            // Obtener fechas únicas
+            const fechas = [...new Set(data.map(item => item.date))];
+            const datalistFechas = document.getElementById('date-options');
+            datalistFechas.innerHTML = '';
+            fechas.forEach(fecha => {
+                const option = document.createElement('option');
+                option.value = fecha;
+                datalistFechas.appendChild(option);
+            });
+
+            // Obtener horas únicas
+            const horas = [...new Set(data.map(item => item.time))];
+            const datalistHoras = document.getElementById('time-options');
+            datalistHoras.innerHTML = '';
+            horas.forEach(hora => {
+                const option = document.createElement('option');
+                option.value = hora;
+                datalistHoras.appendChild(option);
+            });
+        });
+
+
 });

@@ -1,260 +1,398 @@
-// charts.js
-document.addEventListener("DOMContentLoaded", () => {
-    // Chart 1 - Pie chart
-    const ctx1 = document.getElementById('myLineChart1').getContext('2d');
-    new Chart(ctx1, {
-        type: 'pie',
-        data: {
-            labels: ['January', 'February', 'March', 'April'],
-            datasets: [{
-                label: 'Energy Consumption (kWh)',
-                data: [120, 150, 100, 180],
-                backgroundColor: [
-                    'rgba(75, 192, 192, 0.6)',
-                    'rgba(255, 99, 132, 0.6)',
-                    'rgba(255, 206, 86, 0.6)',
-                    'rgba(54, 162, 235, 0.6)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: true,
-                },
-            }
-        }
-    });
+let allData = [];
 
-    // Chart 2 - Line chart
-    const ctx2 = document.getElementById('myLineChart2').getContext('2d');
-    new Chart(ctx2, {
-        type: 'line',
-        data: {
-            labels: ['January', 'February', 'March', 'April'],
-            datasets: [{
-                label: 'Monthly Sales',
-                data: [65, 59, 80, 81],
-                borderColor: 'rgba(153, 102, 255, 1)',
-                backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                borderWidth: 2,
-                fill: true,
-                tension: 0.3
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+const ctx1 = document.getElementById('myLineChart1').getContext('2d');
+const ctx2 = document.getElementById('myLineChart2').getContext('2d');
+const ctx3 = document.getElementById('myLineChart3').getContext('2d');
+const ctx4 = document.getElementById('myLineChart4').getContext('2d');
+const ctx5 = document.getElementById('myLineChart5').getContext('2d');
+const ctx6 = document.getElementById('myLineChart6').getContext('2d');
+const ctx7 = document.getElementById('myLineChart7').getContext('2d');
+const ctx8 = document.getElementById('myLineChart8').getContext('2d');
+const ctx9 = document.getElementById('myLineChart9').getContext('2d');
 
-    // Chart 3 - Bar chart
-    const ctx3 = document.getElementById('myLineChart3').getContext('2d');
-    new Chart(ctx3, {
-        type: 'bar',
-        data: {
-            labels: ['Q1', 'Q2', 'Q3', 'Q4'],
-            datasets: [{
-                label: 'Revenue',
-                data: [30000, 40000, 35000, 50000],
-                backgroundColor: 'rgba(255, 159, 64, 0.6)',
-                borderColor: 'rgba(255, 159, 64, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    // Chart 4 - Radar chart
-    const ctx4 = document.getElementById('myLineChart4').getContext('2d');
-    new Chart(ctx4, {
-        type: 'radar',
-        data: {
-            labels: ['Speed', 'Strength', 'Agility', 'Endurance', 'Skill'],
-            datasets: [{
-                label: 'Player A',
-                data: [65, 59, 90, 81, 56],
-                fill: true,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                pointBackgroundColor: 'rgba(255, 99, 132, 1)'
-            }, {
-                label: 'Player B',
-                data: [28, 48, 40, 19, 96],
-                fill: true,
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                pointBackgroundColor: 'rgba(54, 162, 235, 1)'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                r: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    // Chart 5 - Polar Area chart
-    const ctx5 = document.getElementById('myLineChart5').getContext('2d');
-    new Chart(ctx5, {
-        type: 'polarArea',
-        data: {
-            labels: ['Red', 'Green', 'Yellow', 'Grey', 'Blue'],
-            datasets: [{
-                label: 'Votes',
-                data: [11, 16, 7, 3, 14],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.7)',
-                    'rgba(75, 192, 192, 0.7)',
-                    'rgba(255, 205, 86, 0.7)',
-                    'rgba(201, 203, 207, 0.7)',
-                    'rgba(54, 162, 235, 0.7)'
-                ]
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-        }
-    });
-
-    // Chart 6 - Doughnut chart
-    const ctx6 = document.getElementById('myLineChart6').getContext('2d');
-    new Chart(ctx6, {
-        type: 'doughnut',
-        data: {
-            labels: ['Chrome', 'Firefox', 'Edge', 'Safari'],
-            datasets: [{
-                label: 'Browser Usage',
-                data: [55, 25, 10, 10],
-                backgroundColor: [
-                    'rgba(66, 133, 244, 0.7)',
-                    'rgba(255, 99, 132, 0.7)',
-                    'rgba(255, 206, 86, 0.7)',
-                    'rgba(75, 192, 192, 0.7)'
-                ]
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'right',
-                }
-            }
-        }
-    });
-
-    // Chart 7 - Bubble chart
-    const ctx7 = document.getElementById('myLineChart7').getContext('2d');
-    new Chart(ctx7, {
-        type: 'bubble',
-        data: {
-            datasets: [{
-                label: 'Population',
-                data: [
-                    { x: 20, y: 30, r: 15 },
-                    { x: 40, y: 10, r: 10 },
-                    { x: 25, y: 15, r: 20 },
-                    { x: 35, y: 25, r: 12 }
-                ],
-                backgroundColor: 'rgba(255, 99, 132, 0.5)'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    beginAtZero: true
-                },
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    // Chart 8 - Scatter chart
-    const ctx8 = document.getElementById('myLineChart8').getContext('2d');
-    new Chart(ctx8, {
-        type: 'scatter',
-        data: {
-            datasets: [{
-                label: 'Sample Points',
-                data: [
-                    { x: -10, y: 0 },
-                    { x: 0, y: 10 },
-                    { x: 10, y: 5 },
-                    { x: 5, y: -5 }
-                ],
-                backgroundColor: 'rgba(54, 162, 235, 0.7)'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    type: 'linear',
-                    position: 'bottom'
-                }
-            }
-        }
-    });
-
-    // Chart 9 - Stacked Bar Chart
-    const ctx9 = document.getElementById('myLineChart9').getContext('2d');
-    new Chart(ctx9, {
-        type: 'bar',
-        data: {
-            labels: ['January', 'February', 'March', 'April'],
-            datasets: [
-                {
-                    label: 'Product A',
-                    data: [50, 60, 70, 80],
-                    backgroundColor: 'rgba(255, 99, 132, 0.7)'
-                },
-                {
-                    label: 'Product B',
-                    data: [30, 40, 50, 60],
-                    backgroundColor: 'rgba(54, 162, 235, 0.7)'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                x: {
-                    stacked: true
-                },
-                y: {
-                    stacked: true,
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+// Gráficos iniciales con datos vacíos
+const chart1 = new Chart(ctx1, {
+  type: 'pie',
+  data: {
+    labels: ['Zonnepaneelspanning', 'Zonnepaneelstroom', 'Stroomverbruik woning'],
+    datasets: [{ data: [0, 0, 0], backgroundColor: ['#4bc0c0', '#ff6384', '#ffce56'] }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
 });
+
+const chart2 = new Chart(ctx2, {
+  type: 'line',
+  data: {
+    labels: ['Zonnepaneelspanning', 'Zonnepaneelstroom', 'Stroomverbruik woning'],
+    datasets: [{
+      label: 'Energy Data',
+      data: [0, 0, 0],
+      borderColor: 'rgba(153, 102, 255, 1)',
+      backgroundColor: 'rgba(153, 102, 255, 0.2)',
+      fill: true,
+      tension: 0.3
+    }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+});
+
+const chart3 = new Chart(ctx3, {
+  type: 'bar',
+  data: {
+    labels: ['Zonnepaneelspanning', 'Zonnepaneelstroom', 'Stroomverbruik woning'],
+    datasets: [{
+      label: 'Energy Data',
+      data: [0, 0, 0],
+      backgroundColor: 'rgba(255, 159, 64, 0.6)'
+    }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+});
+
+const chart4 = new Chart(ctx4, {
+  type: 'pie',
+  data: {
+    labels: ['Waterstofproductie', 'Waterstofverbruik auto', 'Waterstofopslag woning'],
+    datasets: [{ data: [0, 0, 0], backgroundColor: ['#ff6384', '#36a2eb', '#ffce56'] }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+const chart5 = new Chart(ctx5, {
+  type: 'line',
+  data: {
+    labels: ['Waterstofproductie', 'Waterstofverbruik auto', 'Waterstofopslag woning'],
+    datasets: [{
+      label: 'Hydrogen Use & Production',
+      data: [0, 0, 0],
+      borderColor: 'rgba(255, 99, 132, 1)',
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      fill: true,
+      tension: 0.3
+    }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+});
+
+const chart6 = new Chart(ctx6, {
+  type: 'bar',
+  data: {
+    labels: ['Waterstofproductie', 'Waterstofverbruik auto', 'Waterstofopslag woning'],
+    datasets: [{
+      label: 'Hydrogen Use & Production',
+      data: [0, 0, 0],
+      backgroundColor: 'rgba(54, 162, 235, 0.6)'
+    }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+});
+
+const chart7 = new Chart(ctx7, {
+  type: 'pie',
+  data: {
+    labels: ['Buitentemperatuur', 'Binnentemperatuur', 'Luchtdruk'],
+    datasets: [{ data: [0, 0, 0], backgroundColor: ['#36a2eb', '#ff6384', '#4bc0c0'] }]
+  },
+  options: { responsive: true, maintainAspectRatio: false }
+});
+
+const chart8 = new Chart(ctx8, {
+  type: 'line',
+  data: {
+    labels: ['Buitentemperatuur', 'Binnentemperatuur', 'Luchtdruk'],
+    datasets: [{
+      label: 'Weather & Environment',
+      data: [0, 0, 0],
+      borderColor: 'rgba(75, 192, 192, 1)',
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      fill: true,
+      tension: 0.3
+    }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+});
+
+const chart9 = new Chart(ctx9, {
+  type: 'bar',
+  data: {
+    labels: ['Buitentemperatuur', 'Binnentemperatuur', 'Luchtdruk'],
+    datasets: [{
+      label: 'Weather & Environment',
+      data: [0, 0, 0],
+      backgroundColor: 'rgba(255, 206, 86, 0.6)'
+    }]
+  },
+  options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }
+});
+
+
+// Fetch datos y llenar datalists
+fetch('php/getData.php')
+  .then(response => response.json())
+  .then(data => {
+    allData = data;
+
+    // Llenar datalists de fecha y hora
+    const dateOptions = [...new Set(data.map(item => item.date))];
+    const timeOptions = [...new Set(data.map(item => item.time))];
+
+    const dateDatalist = document.getElementById('date-options');
+    dateDatalist.innerHTML = '';
+    dateOptions.forEach(date => {
+      const option = document.createElement('option');
+      option.value = date;
+      dateDatalist.appendChild(option);
+    });
+
+    const timeDatalist = document.getElementById('time-options');
+    timeDatalist.innerHTML = '';
+    timeOptions.forEach(time => {
+      const option = document.createElement('option');
+      option.value = time;
+      timeDatalist.appendChild(option);
+    });
+
+    // Aquí puedes llamar a la función que actualiza las gráficas si quieres
+    updateCharts();
+  })
+  .catch(error => {
+    console.error('Error al obtener los datos:', error);
+  });
+
+// Inputs
+const dateInput = document.querySelector('input[list="date-options"]');
+const timeInput = document.querySelector('input[list="time-options"]');
+
+dateInput.addEventListener('input', updateCharts);
+timeInput.addEventListener('input', updateCharts);
+
+function updateCharts() {
+  const selectedDate = dateInput.value.trim();
+  const selectedTime = timeInput.value.trim();
+
+  if (!selectedDate) {
+    resetCharts();
+    return;
+  }
+
+  if (selectedTime) {
+    // Caso hora específica: mostrar solo ese dato puntual (igual que antes)
+    const filteredData = allData.filter(item => item.date === selectedDate && item.time === selectedTime);
+    if (filteredData.length === 0) {
+      resetCharts();
+      return;
+    }
+    const d = filteredData[0];
+
+    // Actualizar pie charts con dato puntual
+    const energyValues = [
+      Number(d.zonnepaneelspanning),
+      Number(d.zonnepaneelstroom),
+      Number(d.stroomverbruik_woning)
+    ];
+    [chart1].forEach(chart => {
+      chart.data.datasets[0].data = energyValues;
+      chart.update();
+    });
+
+    // Actualizar línea y barra charts con un solo punto
+    [chart2, chart3].forEach(chart => {
+      chart.data.labels = ['Zonnepaneelspanning', 'Zonnepaneelstroom', 'Stroomverbruik woning'];
+      chart.data.datasets[0].data = energyValues;
+      chart.update();
+    });
+
+    // Hydrogen
+    const hydrogenValues = [
+      Number(d.waterstofproductie),
+      Number(d.waterstofverbruik_auto),
+      Number(d.waterstofopslag_woning)
+    ];
+    [chart4].forEach(chart => {
+      chart.data.datasets[0].data = hydrogenValues;
+      chart.update();
+    });
+    [chart5, chart6].forEach(chart => {
+      chart.data.labels = ['Waterstofproductie', 'Waterstofverbruik auto', 'Waterstofopslag woning'];
+      chart.data.datasets[0].data = hydrogenValues;
+      chart.update();
+    });
+
+    // Weather
+    const weatherValues = [
+      Number(d.buitentemperatuur),
+      Number(d.binnentemperatuur),
+      Number(d.luchtdruk)
+    ];
+    [chart7].forEach(chart => {
+      chart.data.datasets[0].data = weatherValues;
+      chart.update();
+    });
+    [chart8, chart9].forEach(chart => {
+      chart.data.labels = ['Buitentemperatuur', 'Binnentemperatuur', 'Luchtdruk'];
+      chart.data.datasets[0].data = weatherValues;
+      chart.update();
+    });
+
+  } else {
+    // Solo fecha: mostrar toda la info del día con hora en eje X para line/bar charts
+    const filteredData = allData.filter(item => item.date === selectedDate);
+    if (filteredData.length === 0) {
+      resetCharts();
+      return;
+    }
+
+    // Labels para line/bar charts: las horas del día
+    const labels = filteredData.map(item => item.time);
+
+    // Energy data por hora
+    const zonnepaneelspanningArr = filteredData.map(item => Number(item.zonnepaneelspanning));
+    const zonnepaneelstroomArr = filteredData.map(item => Number(item.zonnepaneelstroom));
+    const stroomverbruikArr = filteredData.map(item => Number(item.stroomverbruik_woning));
+
+    // Actualizar chart2 (línea) y chart3 (barra) con todos los datos por hora
+    [chart2, chart3].forEach(chart => {
+      chart.data.labels = labels;
+      chart.data.datasets = [
+        {
+          label: 'Zonnepaneelspanning',
+          data: zonnepaneelspanningArr,
+          borderColor: 'rgba(153, 102, 255, 1)',
+          backgroundColor: chart.config.type === 'line' ? 'rgba(153, 102, 255, 0.2)' : 'rgba(153, 102, 255, 0.6)',
+          fill: chart.config.type === 'line',
+          tension: 0.3
+        },
+        {
+          label: 'Zonnepaneelstroom',
+          data: zonnepaneelstroomArr,
+          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: chart.config.type === 'line' ? 'rgba(255, 99, 132, 0.2)' : 'rgba(255, 99, 132, 0.6)',
+          fill: chart.config.type === 'line',
+          tension: 0.3
+        },
+        {
+          label: 'Stroomverbruik woning',
+          data: stroomverbruikArr,
+          borderColor: 'rgba(255, 206, 86, 1)',
+          backgroundColor: chart.config.type === 'line' ? 'rgba(255, 206, 86, 0.2)' : 'rgba(255, 206, 86, 0.6)',
+          fill: chart.config.type === 'line',
+          tension: 0.3
+        }
+      ];
+      chart.update();
+    });
+
+    // Hydrogen data
+    const waterstofproductieArr = filteredData.map(item => Number(item.waterstofproductie));
+    const waterstofverbruikAutoArr = filteredData.map(item => Number(item.waterstofverbruik_auto));
+    const waterstofopslagWoningArr = filteredData.map(item => Number(item.waterstofopslag_woning));
+
+    [chart5, chart6].forEach(chart => {
+      chart.data.labels = labels;
+      chart.data.datasets = [
+        {
+          label: 'Waterstofproductie',
+          data: waterstofproductieArr,
+          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: chart.config.type === 'line' ? 'rgba(255, 99, 132, 0.2)' : 'rgba(255, 99, 132, 0.6)',
+          fill: chart.config.type === 'line',
+          tension: 0.3
+        },
+        {
+          label: 'Waterstofverbruik auto',
+          data: waterstofverbruikAutoArr,
+          borderColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: chart.config.type === 'line' ? 'rgba(54, 162, 235, 0.2)' : 'rgba(54, 162, 235, 0.6)',
+          fill: chart.config.type === 'line',
+          tension: 0.3
+        },
+        {
+          label: 'Waterstofopslag woning',
+          data: waterstofopslagWoningArr,
+          borderColor: 'rgba(255, 206, 86, 1)',
+          backgroundColor: chart.config.type === 'line' ? 'rgba(255, 206, 86, 0.2)' : 'rgba(255, 206, 86, 0.6)',
+          fill: chart.config.type === 'line',
+          tension: 0.3
+        }
+      ];
+      chart.update();
+    });
+
+    // Weather data
+    const buitentemperatuurArr = filteredData.map(item => Number(item.buitentemperatuur));
+    const binnentemperatuurArr = filteredData.map(item => Number(item.binnentemperatuur));
+    const luchtdrukArr = filteredData.map(item => Number(item.luchtdruk));
+
+    [chart8, chart9].forEach(chart => {
+      chart.data.labels = labels;
+      chart.data.datasets = [
+        {
+          label: 'Buitentemperatuur',
+          data: buitentemperatuurArr,
+          borderColor: 'rgba(75, 192, 192, 1)',
+          backgroundColor: chart.config.type === 'line' ? 'rgba(75, 192, 192, 0.2)' : 'rgba(75, 192, 192, 0.6)',
+          fill: chart.config.type === 'line',
+          tension: 0.3
+        },
+        {
+          label: 'Binnentemperatuur',
+          data: binnentemperatuurArr,
+          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: chart.config.type === 'line' ? 'rgba(255, 99, 132, 0.2)' : 'rgba(255, 99, 132, 0.6)',
+          fill: chart.config.type === 'line',
+          tension: 0.3
+        },
+        {
+          label: 'Luchtdruk',
+          data: luchtdrukArr,
+          borderColor: 'rgba(255, 206, 86, 1)',
+          backgroundColor: chart.config.type === 'line' ? 'rgba(255, 206, 86, 0.2)' : 'rgba(255, 206, 86, 0.6)',
+          fill: chart.config.type === 'line',
+          tension: 0.3
+        }
+      ];
+      chart.update();
+    });
+
+    // Para los pie charts (chart1, chart4, chart7) podrías poner el promedio o mantenerlos en cero
+    // Aquí pongo promedios para que tengan sentido:
+    const avg = arr => arr.reduce((a,b) => a+b, 0) / arr.length;
+
+    [chart1].forEach(chart => {
+      chart.data.datasets[0].data = [
+        avg(zonnepaneelspanningArr),
+        avg(zonnepaneelstroomArr),
+        avg(stroomverbruikArr)
+      ];
+      chart.update();
+    });
+
+    [chart4].forEach(chart => {
+      chart.data.datasets[0].data = [
+        avg(waterstofproductieArr),
+        avg(waterstofverbruikAutoArr),
+        avg(waterstofopslagWoningArr)
+      ];
+      chart.update();
+    });
+
+    [chart7].forEach(chart => {
+      chart.data.datasets[0].data = [
+        avg(buitentemperatuurArr),
+        avg(binnentemperatuurArr),
+        avg(luchtdrukArr)
+      ];
+      chart.update();
+    });
+  }
+}
+
+
+// Reset charts
+function resetCharts() {
+  const zero = [0, 0, 0];
+  [chart1, chart2, chart3, chart4, chart5, chart6, chart7, chart8, chart9].forEach(chart => {
+    chart.data.datasets[0].data = zero;
+    chart.update();
+  });
+}
