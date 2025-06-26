@@ -264,7 +264,7 @@ input:-webkit-autofill {
   margin-top: 2rem;
 }
 
-.home__box {
+.home__box, .energy-data__box, .hydrogen__top-box, .hydrogen__square, .weather__square, .weather__middle-box {
   background-color: #2D2A3E;
   border: 2px solid #8F87F8;
   border-radius: 10px;
