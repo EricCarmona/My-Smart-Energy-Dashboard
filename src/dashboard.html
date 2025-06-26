@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnergyIQ</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <section class="header__top">
+            <img src="./assets/img/logo.png" width="100" alt="Logo" class="header__logo">
+            <div class="header__titles">
+                <h1 class="header__title">EnergyIQ</h1>
+                <h2 class="header__subtitle">BETA</h2>
+            </div>
+        </section>
+
+        <nav class="header__nav">
+            <a href="#" class="header__link" data-section="home" title="Home">
+                <i class="fas fa-home fa-2x"></i>
+            </a>
+            <a href="#" class="header__link" data-section="energy-data" title="Energy Data">
+                <i class="fas fa-bolt fa-2x"></i>
+            </a>
+            <a href="#" class="header__link" data-section="hydrogen" title="Hydrogen Use & Production">
+                <i class="fas fa-flask fa-2x"></i>
+            </a>
+            <a href="#" class="header__link" data-section="weather" title="Weather & Environment">
+                <i class="fas fa-cloud-sun fa-2x"></i>
+            </a>
+            <a href="#" class="header__link-bottom" data-section="settings" title="Settings">
+                <i class="fas fa-cog fa-2x"></i>
+            </a>
+        </nav>
+
+    </header>
+
+    <main class="main">
+        <section class="main-top">
+            <h2 class="main-top__title">Energy Dashboard</h2>
+
+            <div class="main-top__controls">
+                <div class="main-top__filters">
+                    <button class="main-top__button">Today</button>
+                    <button class="main-top__button">Month</button>
+                    <button class="main-top__button">Year</button>
+                </div>
+
+                <div class="main-top__date-picker">
+                    <input class="main-top__input" list="time-options" placeholder="Select a time" />
+                    <datalist id="time-options">
+                    </datalist>
+
+                    <input class="main-top__input" list="time-options" placeholder="Select a time" />
+                    <datalist id="time-options">
+                    </datalist>
+
+                    <input class="main-top__input" list="date-options" placeholder="Select a date" />
+                    <datalist id="date-options">
+                    </datalist>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="main__view home">
+            <h2 class="home__title">Welcome to EnergyIQ</h2>
+            <p class="home__text">This is your home dashboard.</p>
+
+            <div class="home__grid">
+                <div class="home__box">
+                    <canvas id="myLineChart1"></canvas>
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart2"></canvas>
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart3"></canvas>
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart4"></canvas>
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart5"></canvas>
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart6"></canvas>
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart7"></canvas>
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart8"></canvas>
+                </div>
+                <div class="home__box">
+                    <canvas id="myLineChart9"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="main__view energy-data" hidden>
+            <h2 class="energy-data__title">Energy Data</h2>
+            <p class="energy-data__text">Overview of energy consumption.</p>
+
+            <div class="energy-data__column">
+                <div class="energy-data__box">
+                    <canvas id="myLineChart10"></canvas>
+                </div>
+                <div class="energy-data__box">
+                    <canvas id="myLineChart11"></canvas>
+                </div>
+                <div class="energy-data__box">
+                    <canvas id="myLineChart12"></canvas>
+                </div>
+                <div class="energy-data__box">
+                    <canvas id="myLineChart13"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="main__view hydrogen" hidden>
+            <h2 class="hydrogen__title">Hydrogen Use & Production</h2>
+            <p class="hydrogen__text">Information about hydrogen production and usage.</p>
+
+            <div class="hydrogen__top-box">
+                    <canvas id="myLineChart14"></canvas>
+            </div>
+
+            <div class="hydrogen__middle">
+                <div class="hydrogen__square">
+                    <canvas id="myLineChart15"></canvas>
+                </div>
+                <div class="hydrogen__square">
+                    <canvas id="myLineChart16"></canvas>
+                </div>
+            </div>
+
+            <div class="hydrogen__bottom-box">
+                    <canvas id="myLineChart17"></canvas>
+            </div>
+        </section>
+
+
+        <section class="main__view weather" hidden>
+            <h2 class="weather__title">Weather & Environment</h2>
+            <p class="weather__text">Current weather conditions and environmental data.</p>
+
+            <div class="weather__top">
+                <div class="weather__square">
+                    <canvas id="myLineChart18"></canvas>
+                </div>
+                <div class="weather__square">
+                    <canvas id="myLineChart19"></canvas>
+                </div>
+            </div>
+
+            <div class="weather__middle-box">
+                    <canvas id="myLineChart20"></canvas>
+            </div>
+            <div class="weather__bottom-box">
+                    <canvas id="myLineChart21"></canvas>
+            </div>
+        </section>
+
+
+        <section class="main__view settings" hidden>
+            <h2 class="settings__title">Settings</h2>
+            <p class="settings__text">Adjust your preferences and configurations.</p>
+
+            <!-- SETTINGS SECTION / SECCIÓN DE CONFIGURACIÓN -->
+            <!--
+              This section allows users to customize their dashboard preferences:
+              - Switch between dark and light mode
+              - Adjust font size
+              - Change language
+              - Update name and password
+              - Log out
+              
+              Esta sección permite a los usuarios personalizar sus preferencias del panel:
+              - Cambiar entre modo oscuro y claro
+              - Ajustar el tamaño de la fuente
+              - Cambiar el idioma
+              - Actualizar nombre y contraseña
+              - Cerrar sesión
+            -->
+            <div class="settings__custom">
+                <!-- Theme mode selection / Selección de modo de tema -->
+                <div class="settings__top">
+                    <div class="settings__modes">
+                        <!-- Dark mode option / Opción modo oscuro -->
+                        <label class="settings__radio">
+                            <input type="radio" name="mode" class="settings__radio-input" checked>
+                            <span class="settings__radio-circle settings__radio-circle--dark"></span>
+                            <span class="settings__radio-label">Dark mode</span>
+                        </label>
+                        <!-- Light mode option / Opción modo claro -->
+                        <label class="settings__radio">
+                            <input type="radio" name="mode" class="settings__radio-input">
+                            <span class="settings__radio-circle settings__radio-circle--light"></span>
+                            <span class="settings__radio-label">Light mode</span>
+                        </label>
+                    </div>
+                    <!-- Font size input / Entrada de tamaño de fuente -->
+                    <div class="settings__fontsize">
+                        <span class="settings__fontsize-label">Font size</span>
+                        <input class="settings__fontsize-input" type="text" list="font-size-list" placeholder="Aa">
+                        <datalist id="font-size-list">
+                            <option value="Small"></option>
+                            <option value="Medium"></option>
+                            <option value="Large"></option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="settings__main">
+                    <!-- Language selection / Selección de idioma -->
+                    <div class="settings__lang">
+                        <span class="settings__lang-title">Language</span>
+                        <ul class="settings__lang-list">
+                            <li class="settings__lang-item">
+                                English <span class="settings__lang-dot settings__lang-dot--active"></span>
+                            </li>
+                            <li class="settings__lang-item">
+                                Spanish <span class="settings__lang-dot"></span>
+                            </li>
+                            <li class="settings__lang-item">
+                                Dutch <span class="settings__lang-dot"></span>
+                            </li>
+                        </ul>
+                        <button class="settings__lang-confirm">Confirm</button>
+                    </div>
+                    <!-- User info form / Formulario de información de usuario -->
+                    <form class="settings__form">
+                        <label class="settings__form-label">
+                            Change name:
+                            <input type="text" class="settings__form-input" placeholder="email">
+                        </label>
+                        <label class="settings__form-label">
+                            Change password:
+                            <input type="password" class="settings__form-input" placeholder="email">
+                        </label>
+                        <label class="settings__form-label">
+                            Confirm password:
+                            <input type="password" class="settings__form-input" placeholder="email">
+                        </label>
+                        <button class="settings__form-btn">Start free trial</button>
+                    </form>
+                </div>
+
+                <!-- Log out button / Botón para cerrar sesión -->
+                <button class="settings__logout">Log out</button>
+            </div>
+        </section>
+
+    </main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./js/main.js"></script>
+<script src="js/charts.js" defer></script>
+</body>
+</html>

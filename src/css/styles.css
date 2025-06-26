@@ -1,0 +1,734 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  /* 62.5% de 16px = 10px */
+}
+
+body {
+  background-color: #1F1D2B;
+  line-height: 1.6;
+}
+
+/* LOGIN */
+
+#login {
+  background-color: #1F1D2B;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #2D2A3E;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.titel {
+  color: #8F87F8;
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.login-formulier input {
+  width: 260px;
+  margin: 12px auto;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #2D2A3E;
+  background-color: #8F87F8;
+  font-size: 1em;
+  display: block;
+}
+
+.login-formulier button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #1F1D2B;
+  color: #6d6b79;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+
+.login-formulier button:hover {
+  background: #333;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 25rem;
+  background-color: #2D2A3E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  color: #8F87F8;
+}
+
+.header__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.header__logo {
+  margin-bottom: 1rem;
+}
+
+.header__titles {
+  text-align: center;
+}
+
+.header__title {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.header__subtitle {
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+
+.header__title,
+.header__subtitle {
+  cursor: default;
+  user-select: none;
+}
+
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  flex: 1;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.header__link {
+  color: #8F87F8;
+  text-decoration: none;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.header__link-bottom {
+  color: #8F87F8;
+  text-decoration: none;
+  font-size: 1.6rem;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* MAIN-TOP */
+
+.main-top {
+  width: 165rem;
+  padding: 2rem 3rem;
+  position: fixed;
+  background-color: #1F1D2B;
+  color: #8F87F8;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-left: 25rem;
+}
+
+.main-top__title {
+  font-size: 3rem;
+  font-weight: 700;
+  user-select: none;
+}
+
+.main-top__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.main-top__filters {
+  display: flex;
+  gap: 1rem;
+  background-color: #8F87F8;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+}
+
+.main-top__button {
+  background-color: #2D2A3E;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.6rem 1.4rem;
+  color: #8F87F8;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.main-top__button:hover,
+.main-top__button:focus {
+  background-color: #15131d;
+  outline: none;
+}
+
+.main-top__date-picker {
+  background-color: #8F87F8;
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.8rem;
+  max-width: 20rem;
+  padding-left: 3rem;
+}
+
+.main-top__input {
+  width: 100%;
+  background-color: #8F87F8;
+  border: none;
+  color: #2D2A3E;
+  font-size: 1.6rem;
+  outline: none;
+  user-select: text;
+  appearance: none;
+}
+
+.main-top__input::placeholder {
+  color: #1F1D2B;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #8F87F8 inset !important;
+  -webkit-text-fill-color: #2D2A3E !important;
+}
+
+/* --------------------------------------------------
+   MAIN DASHBOARD STYLES / ESTILOS PRINCIPALES DEL PANEL
+   This file contains all the CSS for layout, colors, and components.
+   Este archivo contiene todo el CSS para el diseño, colores y componentes.
+---------------------------------------------------*/
+
+/* SECTIONS */
+
+.main__view {
+  padding: 2rem 3rem;
+  margin-left: 25rem;
+  color: #8F87F8;
+}
+
+.home__title,
+.energy-data__title,
+.hydrogen__title,
+.weather__title {
+  margin-top: 15rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.home__text,
+.energy-data__text,
+.hydrogen__text,
+.weather__text,
+.settings__text {
+  font-size: 2rem;
+  text-align: left;
+}
+
+/* HOME SECTION / SECCIÓN HOME */
+
+.home__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  margin-top: 2rem;
+}
+
+/* Box styles for charts and data blocks / Estilos de cajas para gráficos y bloques de datos */
+.home__box, .energy-data__box, .hydrogen__top-box, .hydrogen__square, .weather__square, .weather__middle-box {
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
+  height: 50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ENERGY-DATA SECTION / SECCIÓN DE DATOS DE ENERGÍA */
+
+.energy-data__column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.energy-data__box {
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
+  height: 50rem;
+  margin-top: 3rem;
+}
+
+/* HYDROGEN */
+
+.hydrogen__top-box,
+.hydrogen__bottom-box {
+  height: 50rem;
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
+  margin: 5rem 0 5rem 0;
+}
+
+.hydrogen__middle {
+  display: flex;
+  gap: 5rem;
+  margin-top: 2rem;
+}
+
+.hydrogen__square {
+  flex: 1;
+  height: 50rem;
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
+}
+
+/* WEATHER */
+
+.weather__top {
+  display: flex;
+  gap: 5rem;
+  margin-top: 5rem;
+}
+
+.weather__square,
+.weather__middle-box,
+.weather__bottom-box {
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
+}
+
+.weather__square {
+  flex: 1;
+  height: 50rem;
+}
+
+.weather__middle-box,
+.weather__bottom-box {
+  margin-top: 5rem;
+  height: 50rem;
+}
+
+/* SETTINGS SECTION */
+
+.settings__title {
+  margin-top: 3rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.settings__container {
+  margin-top: 5rem;
+}
+
+.settings__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  margin-top: 5rem;
+}
+
+.settings__box {
+  background-color: #2D2A3E;
+  border: 2px solid #8F87F8;
+  border-radius: 10px;
+  height: 38rem;
+  transition: box-shadow 0.3s;
+}
+
+/* CSS BEM para la sección de Settings */
+
+.settings__custom {
+  width: 100%;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.settings__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 6rem;
+  width: 50%;
+  background: #16162b;
+  border-radius: 0.8rem;
+  padding: 3rem 4rem 2rem 4rem;
+  position: relative;
+}
+
+.settings__modes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-right: 5rem;
+  margin-top: 0.5rem;
+}
+
+.settings__radio {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.settings__radio-input {
+  display: none;
+}
+
+.settings__radio-circle {
+  display: inline-block;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: 2px solid #8F87F8;
+  margin-right: 0.7rem;
+  background: #26244a;
+  position: relative;
+}
+
+.settings__radio-circle--dark {
+  background: #23213e;
+  border-color: #28263c;
+}
+
+.settings__radio-circle--light {
+  background: #fff;
+  border-color: #fff;
+}
+
+.settings__radio-input:checked+.settings__radio-circle--dark {
+  box-shadow: 0 0 0 3px #8F87F8;
+}
+
+.settings__radio-input:checked+.settings__radio-circle--light {
+  box-shadow: 0 0 0 3px #8F87F8;
+}
+
+.settings__radio-label {
+  font-size: 1.6rem;
+  color: #8F87F8;
+}
+
+.settings__fontsize {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-right: 5rem;
+}
+
+.settings__fontsize-label {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.settings__fontsize-input {
+  width: 10rem;
+  height: 3.5rem;
+  border-radius: 0.4rem;
+  border: none;
+  background: #fff;
+  color: #23213e;
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+}
+
+
+.settings__confirm-btn:hover {
+  background: #23213e;
+}
+
+.settings__main {
+  display: flex;
+  gap: 4rem;
+  width: 90%;
+  justify-content: center;
+}
+
+.settings__lang {
+  background: transparent;
+  border: 1.5px solid #8F87F8;
+  border-radius: 0.6rem;
+  padding: 2.5rem 4rem 2.5rem 4rem;
+  min-width: 22rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.settings__lang-title {
+  font-size: 2.1rem;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  user-select: none;
+}
+
+.settings__lang-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.settings__lang-item {
+  font-size: 1.5rem;
+  color: #8F87F8;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.settings__lang-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: #ff3a3a;
+  display: inline-block;
+}
+
+.settings__lang-dot--active {
+  background: #37ff59;
+}
+
+.settings__lang-confirm {
+  background: transparent;
+  border: 1px solid #8F87F8;
+  color: #8F87F8;
+  padding: 0.6rem 2.2rem;
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background .2s;
+  margin-top: 1.2rem;
+}
+
+.settings__lang-confirm:hover {
+  background: #23213e;
+}
+
+.settings__form {
+  background: transparent;
+  border: 1.5px solid #8F87F8;
+  border-radius: 0.6rem;
+  padding: 2.5rem 3.5rem 2.5rem 3.5rem;
+  min-width: 37rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  justify-content: center;
+}
+
+.settings__form-label {
+  display: flex;
+  flex-direction: column;
+  color: #8F87F8;
+  font-size: 1.7rem;
+  gap: 0.7rem;
+}
+
+.settings__form-input {
+  background: transparent;
+  border: 1.5px solid #8F87F8;
+  border-radius: 0.3rem;
+  color: #8F87F8;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.6rem;
+  margin-top: 0.4rem;
+}
+
+.settings__form-btn {
+  margin-top: 1.4rem;
+  background: #928cff;
+  color: #23213e;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 1.2rem 0;
+  font-size: 1.6rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.settings__form-btn:hover {
+  background: #b3b0f9;
+}
+
+.settings__logout {
+  margin-top: 3.5rem;
+  width: 32rem;
+  padding: 1.2rem 0;
+  background: #23213e;
+  border: none;
+  border-radius: 0.5rem;
+  color: #ff6e6e;
+  font-size: 1.7rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.2s;
+}
+
+.settings__logout:hover {
+  background: #342e4c;
+}
+
+/* ---------------------------------------------
+   LIGHT MODE STYLES / ESTILOS PARA MODO CLARO
+   These styles override dark mode when .light-mode is on body
+   Estos estilos sobrescriben el modo oscuro cuando .light-mode está en body
+----------------------------------------------*/
+
+body.light-mode {
+  background-color: #f4f4f9;
+  color: #23213e;
+}
+
+body.light-mode .header,
+body.light-mode .main-top,
+body.light-mode .main__view,
+body.light-mode .container {
+  background-color: #fff;
+  color: #23213e;
+}
+
+body.light-mode .header__link,
+body.light-mode .header__link-bottom,
+body.light-mode .main-top__title,
+body.light-mode .main-top__filters,
+body.light-mode .main-top__button,
+body.light-mode .main-top__date-picker,
+body.light-mode .main__view,
+body.light-mode .home__title,
+body.light-mode .energy-data__title,
+body.light-mode .hydrogen__title,
+body.light-mode .weather__title,
+body.light-mode .settings__title,
+body.light-mode .settings__text {
+  color: #23213e;
+}
+
+body.light-mode .home__box,
+body.light-mode .energy-data__box,
+body.light-mode .hydrogen__top-box,
+body.light-mode .hydrogen__square,
+body.light-mode .weather__square,
+body.light-mode .weather__middle-box,
+body.light-mode .weather__bottom-box,
+body.light-mode .settings__box,
+body.light-mode .settings__custom,
+body.light-mode .settings__top,
+body.light-mode .settings__lang,
+body.light-mode .settings__form {
+  background-color: #f4f4f9;
+  border-color: #928cff;
+  color: #23213e;
+}
+
+body.light-mode .main-top__filters,
+body.light-mode .main-top__date-picker {
+  background-color: #e0e0ff;
+}
+
+body.light-mode .main-top__button {
+  background-color: #fff;
+  color: #23213e;
+}
+body.light-mode .main-top__button:hover,
+body.light-mode .main-top__button:focus {
+  background-color: #e0e0ff;
+}
+
+body.light-mode .settings__radio-label {
+  color: #23213e;
+}
+
+body.light-mode .settings__confirm-btn,
+body.light-mode .settings__lang-confirm {
+  border-color: #928cff;
+  color: #23213e;
+}
+body.light-mode .settings__confirm-btn:hover,
+body.light-mode .settings__lang-confirm:hover {
+  background: #e0e0ff;
+}
+
+body.light-mode .settings__form-input {
+  background: #fff;
+  color: #23213e;
+  border-color: #928cff;
+}
+
+body.light-mode .settings__form-btn {
+  background: #928cff;
+  color: #fff;
+}
+
+body.light-mode .settings__logout {
+  background: #fff;
+  color: #ff6e6e;
+}
+body.light-mode .settings__logout:hover {
+  background: #e0e0ff;
+}
+body .settings__fontsize-label{
+  color: #928cff;
+}
+body.light-mode .main-top__input {
+  background-color: #e0e0ff;
+  color: #23213e;
+}
+body.light-mode .main-top__input::placeholder {
+  color: #888;
+}
