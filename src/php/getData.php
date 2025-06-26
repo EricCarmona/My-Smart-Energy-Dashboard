@@ -10,7 +10,24 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM energy_data";
+$sql = "SELECT 
+    zonnepaneelspanning, 
+    zonnepaneelstroom, 
+    waterstofproductie, 
+    stroomverbruik_woning, 
+    waterstofverbruik_auto, 
+    buitentemperatuur, 
+    binnentemperatuur, 
+    luchtdruk, 
+    luchtvochtigheid, 
+    accuniveau, 
+    co2_concentratie_binnen, 
+    waterstofopslag_woning, 
+    waterstofopslag_auto, 
+    date, 
+    time 
+FROM energy_data";
+
 $result = $conn->query($sql);
 
 $data = [];
