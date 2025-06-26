@@ -111,4 +111,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Logout button functionality / Funcionalidad del botón de cerrar sesión
+    const logoutBtn = document.querySelector('.settings__logout');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+            // Opcional: aquí podrías hacer una petición AJAX a un PHP para destruir la sesión
+            window.location.href = 'index.html'; // Cambia 'login.html' si tu archivo de login tiene otro nombre
+        });
+    }
+
 });
